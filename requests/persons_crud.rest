@@ -1,0 +1,29 @@
+GET http://localhost:3001/api/persons
+
+###
+# 200
+GET http://localhost:3001/api/persons/1
+
+###
+# 200
+POST http://localhost:3001/api/persons/
+Content-Type: application/json
+
+{
+    "name": "Peter Superloop",
+    "number": "019284"
+}
+
+### 
+# 400 Error, name already exists
+POST http://localhost:3001/api/persons/
+Content-Type: application/json
+
+{
+    "name": "Arto Hellas",
+    "number": "019284"
+}
+
+###
+# 200
+DELETE http://localhost:3001/api/persons/2
